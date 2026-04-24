@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Richard Needs to Find a Living Kidney Donor</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Nunito+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#be0000',
+            secondary: '#046bd2',
+            bgLight: '#F0F5FA',
+          },
+          fontFamily: {
+            nunito: ['Nunito', 'sans-serif'],
+            'nunito-sans': ['Nunito Sans', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    body { font-family: 'Nunito Sans', sans-serif; }
+    h1, h2, h3, h4 { font-family: 'Nunito', sans-serif; }
+    .accordion-content { display: none; }
+    .accordion-content.open { display: block; }
+    .accordion-btn.open .fa-chevron-down { transform: rotate(180deg); }
+    .fa-chevron-down { transition: transform 0.3s ease; }
+  </style>
+</head>
+<body class="bg-bgLight text-[#111111]">
+
+  <!-- Header -->
+  <header class="bg-primary shadow-sm sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-3" style="line-height:1;">
+        <img src="https://giftworksuuh.com/wp-content/uploads/2024/03/logo_giftworks_header.png" alt="GiftWorks Logo" class="h-10 w-auto block" />
+        <span class="text-white/30 text-xl" style="line-height:1;">|</span>
+        <img src="https://healthcare.utah.edu/themes/custom/theme_uou_clinical/logo.svg" alt="University of Utah Health" class="h-8 w-auto block" style="filter: brightness(0) invert(1);" />
+      </div>
+      <nav class="hidden md:flex items-center gap-6 text-sm font-semibold text-white/80 font-nunito uppercase tracking-wide">
+        <a href="#" class="hover:text-white transition-colors flex items-center gap-1.5">
+          <i class="fa-solid fa-house text-xs"></i> Home
+        </a>
+        <a href="#story" class="hover:text-white transition-colors flex items-center gap-1.5">
+          <i class="fa-solid fa-heart text-xs"></i> Richard's Story
+        </a>
+        <a href="#steps" class="hover:text-white transition-colors flex items-center gap-1.5">
+          <i class="fa-solid fa-hand-holding-heart text-xs"></i> How to Help
+        </a>
+        <a href="#faq" class="hover:text-white transition-colors flex items-center gap-1.5">
+          <i class="fa-solid fa-circle-question text-xs"></i> FAQ
+        </a>
+      </nav>
+      <button id="mobile-menu-btn" class="md:hidden text-white text-xl" onclick="toggleMobileMenu()">
+        <i id="mobile-menu-icon" class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-primary border-t border-white/10">
+      <nav class="flex flex-col px-4 py-3 gap-1 text-sm font-semibold text-white/80 font-nunito uppercase tracking-wide">
+        <a href="#" onclick="toggleMobileMenu()" class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-white/10 hover:text-white transition-colors">
+          <i class="fa-solid fa-house text-xs w-4 text-center"></i> Home
+        </a>
+        <a href="#story" onclick="toggleMobileMenu()" class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-white/10 hover:text-white transition-colors">
+          <i class="fa-solid fa-heart text-xs w-4 text-center"></i> Richard's Story
+        </a>
+        <a href="#steps" onclick="toggleMobileMenu()" class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-white/10 hover:text-white transition-colors">
+          <i class="fa-solid fa-hand-holding-heart text-xs w-4 text-center"></i> How to Help
+        </a>
+        <a href="#faq" onclick="toggleMobileMenu()" class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-white/10 hover:text-white transition-colors">
+          <i class="fa-solid fa-circle-question text-xs w-4 text-center"></i> FAQ
+        </a>
+      </nav>
+    </div>
+  </header>
+
+
+  <!-- Hero Section -->
+  <section class="bg-primary py-16 px-6 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10" style="background-image: repeating-linear-gradient(45deg, #fff 0, #fff 1px, transparent 0, transparent 50%); background-size: 12px 12px;"></div>
+    <div class="relative max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10 md:gap-14">
+
+      <!-- Left: Text -->
+      <div class="flex-1 text-left">
+
+        <h1 class="font-nunito font-extrabold text-white uppercase text-4xl md:text-5xl leading-tight tracking-tight mb-8">
+          Richard Needs A<br />Living Kidney Donor
+        </h1>
+        <blockquote class="border-l-4 border-white/40 pl-5 mb-8">
+          <p class="text-white/85 text-base md:text-lg italic font-nunito-sans leading-relaxed">
+            "I want my future kidney donor to know that their sacrifice would give me the chance at a long and happy life."
+          </p>
+        </blockquote>
+        <div class="flex flex-wrap gap-3">
+          <a href="#form" class="inline-flex items-center gap-2 bg-white text-primary font-nunito font-bold uppercase tracking-wide text-sm px-6 py-3 rounded-full shadow-lg hover:bg-white/90 transition-all">
+            <i class="fa-solid fa-hand-holding-heart"></i>
+            I Want to Help
+          </a>
+          <a href="#story" class="inline-flex items-center gap-2 bg-white/10 text-white border border-white/30 font-nunito font-bold uppercase tracking-wide text-sm px-6 py-3 rounded-full hover:bg-white/20 transition-all">
+            <i class="fa-solid fa-play text-xs"></i>
+            Watch Richard's Story
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: Richard photo -->
+      <div class="flex-shrink-0 flex justify-center md:justify-end">
+        <div class="relative">
+          <!-- Outer decorative ring -->
+          <div class="absolute inset-0 rounded-full border-2 border-white/20 scale-[1.12] pointer-events-none"></div>
+          <div class="w-52 h-52 md:w-64 md:h-64 rounded-full border-4 border-white/30 overflow-hidden shadow-2xl">
+            <img src="richard.png" alt="Richard" class="w-full h-full object-cover object-top" />
+          </div>
+          <!-- Heart badge -->
+          <div class="absolute bottom-2 right-2 w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-lg">
+            <i class="fa-solid fa-heart text-primary text-sm"></i>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="max-w-4xl mx-auto px-4 py-10">
+
+    <!-- Richard's Story -->
+    <section id="story" class="bg-white rounded-2xl shadow-sm p-8 md:p-10 mb-8">
+      <h2 class="font-nunito font-bold uppercase text-primary text-xl md:text-2xl tracking-wide mb-6 flex items-center gap-3">
+        <span class="w-1 h-7 bg-primary rounded-full inline-block"></span>
+        Richard's Story
+      </h2>
+      <!-- Vimeo embed -->
+      <div class="mb-7 rounded-xl overflow-hidden shadow-sm" style="padding:56.25% 0 0 0; position:relative;">
+        <iframe src="https://player.vimeo.com/video/1105250120?badge=0&autopause=0&player_id=0&app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Richard's Story"></iframe>
+      </div>
+      <script src="https://player.vimeo.com/api/player.js"></script>
+
+      <div class="space-y-5 text-gray-700 leading-relaxed text-[16px]">
+        <p>
+          Hi, my name is Richard. Every day, I carry the hope of finding someone who might be willing to help me get a transplant. Right now, my health is okay, though I tire more easily than I used to, and the stress of waiting can feel heavy. At my age, waiting years for a deceased donor isn't a great option, so we're praying for a living donor who can give me the chance to look ahead with hope. Living donation is faster and leads to better outcomes, which is why I'm sharing my story with you today.
+        </p>
+        <p>
+          Getting a transplant would mean the world to me. I dream of a brighter future where I can live a more normal life and leave behind the worry of being tied to treatments like dialysis. If you or someone you know feels called to help, your generosity could truly extend my life. Even if donating isn't possible for you, sharing my story might connect me with the person who can help. Thank you for reading and for considering how you might be part of this life-changing journey.
+        </p>
+      </div>
+    </section>
+
+    <!-- Donor Eligibility Requirements -->
+    <section class="bg-white rounded-2xl shadow-sm p-8 md:p-10 mb-8">
+      <h2 class="font-nunito font-bold uppercase text-primary text-xl md:text-2xl tracking-wide mb-6 flex items-center gap-3">
+        <span class="w-1 h-7 bg-primary rounded-full inline-block"></span>
+        Donor Eligibility Requirements
+      </h2>
+      <p class="text-gray-700 leading-relaxed mb-6">
+        Richard is extremely lucky to have secured highly qualified medical help and support from the team at the <strong>University of Utah Health (UUH)</strong>. He wants any interested persons to know that they will be in exceptional hands should they decide to step forward. UUH has shared the following as a pre-qualification list for donation:
+      </p>
+      <ul class="space-y-4">
+        <li class="flex items-center gap-4 p-4 rounded-xl bg-bgLight border border-gray-100">
+          <div class="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+            <i class="fa-solid fa-calendar-days text-primary text-sm"></i>
+          </div>
+          <p class="text-gray-700 font-nunito-sans">Must be between the age of 18–69 years old.</p>
+        </li>
+        <li class="flex items-center gap-4 p-4 rounded-xl bg-bgLight border border-gray-100">
+          <div class="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+            <i class="fa-solid fa-heart-pulse text-primary text-sm"></i>
+          </div>
+          <p class="text-gray-700 font-nunito-sans">Must be healthy and free of major health problems such as high blood pressure, diabetes, heart disease, obesity (BMI of 37 or less).</p>
+        </li>
+        <li class="flex items-center gap-4 p-4 rounded-xl bg-bgLight border border-gray-100">
+          <div class="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+            <i class="fa-solid fa-brain text-primary text-sm"></i>
+          </div>
+          <p class="text-gray-700 font-nunito-sans">Must be mentally and emotionally healthy.</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- CTA / Share Section -->
+    <section class="bg-primary rounded-2xl p-8 md:p-10 mb-8 text-center">
+      <h2 class="font-nunito font-extrabold uppercase text-white text-2xl md:text-3xl tracking-wide mb-2">
+        You Can Help Save Richard's Life!
+      </h2>
+      <p class="text-white/70 font-nunito-sans mb-6 text-sm uppercase tracking-widest font-semibold">Share Now!</p>
+      <div class="flex items-center justify-center gap-6 flex-wrap">
+        <!-- Facebook -->
+        <a href="#" class="group">
+          <div class="w-14 h-14 rounded-full bg-[#1877F2] flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform">
+            <i class="fa-brands fa-facebook-f text-white text-2xl"></i>
+          </div>
+        </a>
+        <!-- X / Twitter -->
+        <a href="#" class="group">
+          <div class="w-14 h-14 rounded-full bg-black flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform">
+            <i class="fa-brands fa-x-twitter text-white text-2xl"></i>
+          </div>
+        </a>
+        <!-- Instagram -->
+        <a href="#" class="group">
+          <div class="w-14 h-14 rounded-full flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform" style="background: linear-gradient(135deg, #f9ce34, #ee2a7b, #6228d7);">
+            <i class="fa-brands fa-instagram text-white text-2xl"></i>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section id="form" class="bg-white rounded-2xl shadow-sm p-8 md:p-10 mb-8">
+      <h2 class="font-nunito font-bold uppercase text-primary text-xl md:text-2xl tracking-wide mb-2 flex items-center gap-3">
+        <span class="w-1 h-7 bg-primary rounded-full inline-block"></span>
+        Get in Touch
+      </h2>
+      <p class="text-gray-500 font-nunito-sans text-sm mb-6">Fill out the form below and a GiftWorks Living Donor Navigator will reach out within 1 business day.</p>
+      <script type="text/javascript" src="https://form.jotform.com/jsform/240316598253055"></script>
+    </section>
+
+    <!-- 3-Step Process -->
+    <section id="steps" class="bg-white rounded-2xl shadow-sm p-8 md:p-10 mb-8">
+      <div class="grid md:grid-cols-3 gap-8">
+
+        <!-- Step 1 -->
+        <div class="flex flex-col items-center text-center gap-4">
+          <div class="relative">
+            <div class="w-16 h-16 rounded-full bg-primary flex items-center justify-center shadow-md">
+              <i class="fa-solid fa-file-lines text-white text-2xl"></i>
+            </div>
+            <span class="absolute -top-1 -right-1 w-6 h-6 rounded-full bg-white border-2 border-primary text-primary text-xs font-bold font-nunito flex items-center justify-center">1</span>
+          </div>
+          <h3 class="font-nunito font-bold uppercase text-primary text-sm tracking-widest">Complete Form</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Fill out the short contact form and a GiftWorks' Living Donor Navigator will reach out to you within <strong>1 business day</strong> to set up a time to connect.
+          </p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="flex flex-col items-center text-center gap-4">
+          <div class="relative">
+            <div class="w-16 h-16 rounded-full bg-primary flex items-center justify-center shadow-md">
+              <i class="fa-solid fa-comments text-white text-2xl"></i>
+            </div>
+            <span class="absolute -top-1 -right-1 w-6 h-6 rounded-full bg-white border-2 border-primary text-primary text-xs font-bold font-nunito flex items-center justify-center">2</span>
+          </div>
+          <h3 class="font-nunito font-bold uppercase text-primary text-sm tracking-widest">Discussion</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            During your time with a GiftWorks' Living Donor Navigator, you will get to ask questions and receive answers from a living kidney donor. They will tell you more about the process, address non-medical concerns, and connect you to valuable resources.
+          </p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="flex flex-col items-center text-center gap-4">
+          <div class="relative">
+            <div class="w-16 h-16 rounded-full bg-primary flex items-center justify-center shadow-md">
+              <i class="fa-solid fa-clipboard-check text-white text-2xl"></i>
+            </div>
+            <span class="absolute -top-1 -right-1 w-6 h-6 rounded-full bg-white border-2 border-primary text-primary text-xs font-bold font-nunito flex items-center justify-center">3</span>
+          </div>
+          <h3 class="font-nunito font-bold uppercase text-primary text-sm tracking-widest">Complete Breeze</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Breeze is a health questionnaire that will be reviewed by the hospital's medical team to determine your eligibility for living donation as well as the next steps.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FAQ / Accordion -->
+    <section id="faq" class="bg-white rounded-2xl shadow-sm p-8 md:p-10 mb-8">
+      <h2 class="font-nunito font-bold uppercase text-primary text-xl md:text-2xl tracking-wide mb-6 flex items-center gap-3">
+        <span class="w-1 h-7 bg-primary rounded-full inline-block"></span>
+        Questions &amp; Answers
+      </h2>
+
+      <div class="space-y-3" id="accordion">
+
+        <div class="border border-gray-100 rounded-xl overflow-hidden">
+          <button class="accordion-btn w-full flex items-center justify-between px-5 py-4 text-left font-nunito font-semibold uppercase text-sm tracking-wide text-gray-800 hover:bg-bgLight transition-colors" onclick="toggleAccordion(this)">
+            <span class="flex items-center gap-3">
+              <i class="fa-solid fa-circle-question text-primary"></i>
+              Was the family tested to donate?
+            </span>
+            <i class="fa-solid fa-chevron-down text-primary text-xs flex-shrink-0"></i>
+          </button>
+          <div class="accordion-content px-5 pb-5 pt-3 text-gray-600 text-sm leading-relaxed border-t border-gray-100">
+            <p>Family members are often the first considered for living donation due to potential compatibility. However, family members are not always a match or eligible to donate. Even if family has been tested, additional donors may still be needed. Anyone, including non-relatives, can be evaluated as a potential donor.</p>
+          </div>
+        </div>
+
+        <div class="border border-gray-100 rounded-xl overflow-hidden">
+          <button class="accordion-btn w-full flex items-center justify-between px-5 py-4 text-left font-nunito font-semibold uppercase text-sm tracking-wide text-gray-800 hover:bg-bgLight transition-colors" onclick="toggleAccordion(this)">
+            <span class="flex items-center gap-3">
+              <i class="fa-solid fa-circle-question text-primary"></i>
+              Do I need insurance to donate?
+            </span>
+            <i class="fa-solid fa-chevron-down text-primary text-xs flex-shrink-0"></i>
+          </button>
+          <div class="accordion-content px-5 pb-5 pt-3 text-gray-600 text-sm leading-relaxed border-t border-gray-100">
+            <p>No, you do not need to have insurance to donate. The recipient's insurance typically covers the costs of the donor's evaluation, surgery, and immediate follow-up care. A GiftWorks Living Donor Navigator can walk you through the financial details specific to your situation.</p>
+          </div>
+        </div>
+
+        <div class="border border-gray-100 rounded-xl overflow-hidden">
+          <button class="accordion-btn w-full flex items-center justify-between px-5 py-4 text-left font-nunito font-semibold uppercase text-sm tracking-wide text-gray-800 hover:bg-bgLight transition-colors" onclick="toggleAccordion(this)">
+            <span class="flex items-center gap-3">
+              <i class="fa-solid fa-circle-question text-primary"></i>
+              How long is the recovery process?
+            </span>
+            <i class="fa-solid fa-chevron-down text-primary text-xs flex-shrink-0"></i>
+          </button>
+          <div class="accordion-content px-5 pb-5 pt-3 text-gray-600 text-sm leading-relaxed border-t border-gray-100">
+            <p>Most living kidney donors are in the hospital for 2–3 days after surgery. Full recovery typically takes 2–4 weeks, depending on the individual. Many donors are able to return to desk jobs within a few weeks and resume full physical activity within 4–6 weeks.</p>
+          </div>
+        </div>
+
+        <div class="border border-gray-100 rounded-xl overflow-hidden">
+          <button class="accordion-btn w-full flex items-center justify-between px-5 py-4 text-left font-nunito font-semibold uppercase text-sm tracking-wide text-gray-800 hover:bg-bgLight transition-colors" onclick="toggleAccordion(this)">
+            <span class="flex items-center gap-3">
+              <i class="fa-solid fa-circle-question text-primary"></i>
+              What about my expenses?
+            </span>
+            <i class="fa-solid fa-chevron-down text-primary text-xs flex-shrink-0"></i>
+          </button>
+          <div class="accordion-content px-5 pb-5 pt-3 text-gray-600 text-sm leading-relaxed border-t border-gray-100">
+            <p>Medical costs for the donor are typically covered by the recipient's insurance. Additionally, there are programs available to help reimburse donors for travel, lodging, and lost wages. Your Living Donor Navigator will help connect you with these resources so that finances are not a barrier to donating.</p>
+          </div>
+        </div>
+
+        <div class="border border-gray-100 rounded-xl overflow-hidden">
+          <button class="accordion-btn w-full flex items-center justify-between px-5 py-4 text-left font-nunito font-semibold uppercase text-sm tracking-wide text-gray-800 hover:bg-bgLight transition-colors" onclick="toggleAccordion(this)">
+            <span class="flex items-center gap-3">
+              <i class="fa-solid fa-circle-question text-primary"></i>
+              What are the requirements to donate?
+            </span>
+            <i class="fa-solid fa-chevron-down text-primary text-xs flex-shrink-0"></i>
+          </button>
+          <div class="accordion-content px-5 pb-5 pt-3 text-gray-600 text-sm leading-relaxed border-t border-gray-100">
+            <p>Donors must generally be between 18–69 years old, in good overall health, and free from conditions such as high blood pressure, diabetes, heart disease, or obesity (BMI 37 or less). They must also be mentally and emotionally healthy. A full medical evaluation will determine final eligibility.</p>
+          </div>
+        </div>
+
+        <div class="border border-gray-100 rounded-xl overflow-hidden">
+          <button class="accordion-btn w-full flex items-center justify-between px-5 py-4 text-left font-nunito font-semibold uppercase text-sm tracking-wide text-gray-800 hover:bg-bgLight transition-colors" onclick="toggleAccordion(this)">
+            <span class="flex items-center gap-3">
+              <i class="fa-solid fa-circle-question text-primary"></i>
+              What happens if a donor is not found?
+            </span>
+            <i class="fa-solid fa-chevron-down text-primary text-xs flex-shrink-0"></i>
+          </button>
+          <div class="accordion-content px-5 pb-5 pt-3 text-gray-600 text-sm leading-relaxed border-t border-gray-100">
+            <p>If a living donor is not found, Richard would remain on the national deceased donor waiting list. The wait for a deceased donor kidney can be many years, and outcomes are generally not as favorable as with a living donor. This is why spreading awareness and finding a living donor is so critical.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t border-gray-100">
+    <div class="max-w-6xl mx-auto px-4 py-6 text-center text-sm text-gray-500 font-nunito-sans">
+      Copyright &copy; 2025 GiftWorks LLC &nbsp;|&nbsp; All Rights Reserved &nbsp;|&nbsp;
+      <a href="#" class="text-primary hover:underline">Privacy Policy</a>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      const icon = document.getElementById('mobile-menu-icon');
+      menu.classList.toggle('hidden');
+      icon.classList.toggle('fa-bars');
+      icon.classList.toggle('fa-xmark');
+    }
+
+    function toggleAccordion(btn) {
+      const content = btn.nextElementSibling;
+      const allContents = document.querySelectorAll('.accordion-content');
+      const allBtns = document.querySelectorAll('.accordion-btn');
+
+      allContents.forEach((c, i) => {
+        if (c !== content) {
+          c.classList.remove('open');
+          allBtns[i].classList.remove('open');
+        }
+      });
+
+      content.classList.toggle('open');
+      btn.classList.toggle('open');
+    }
+  </script>
+
+</body>
+</html>
